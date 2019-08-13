@@ -1,0 +1,28 @@
+
+$color-megadark: #191c24;
+$color-darkest: #101114;
+$color-darker: #1f2229;
+$color-dark: #2a2d37;
+$color-light: #f7f8f8;
+
+$color-white: #ffffff;
+$color-grey: #808592;
+$color-dark-grey: #373c43;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+  font-family: 'OpenSansBold', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}

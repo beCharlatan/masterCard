@@ -1,0 +1,30 @@
+.container {
+  max-width: 120rem;
+  height: 99.1rem;
+  margin: 4rem auto;
+  background-color: $color-darkest;
+}
+
+.content {
+  position: relative;
+  top: 7.9rem;
+  left: 12.5rem;
+  width: 96rem;
+  display: flex;
+  background-color: $color-light;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.sidebar {
+  width: 32.2rem;
+  height: 37.5rem;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

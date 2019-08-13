@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'OpenSans';
+  font-family: 'OpenSansBold';
   src: url("./OpenSans-Bold.ttf");
 }
 @font-face {
@@ -7,3 +7,6 @@
   src: url("./tele2russiatext-bold-webfont.ttf");
 }
 
+@import "./base";
+@import "./layout";
+@import "./components";
