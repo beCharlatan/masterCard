@@ -7,7 +7,11 @@ $color-light: #f7f8f8;
 
 $color-white: #ffffff;
 $color-grey: #808592;
+$color-grey-light: #a7b2c1;
 $color-dark-grey: #373c43;
+
+$color-blue-dark: #004da4;
+$color-blue-light: #005abf;
 
 *,
 *::after,
@@ -19,10 +23,28 @@ $color-dark-grey: #373c43;
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'OpenSansBold', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  font-weight: 500;
+  line-height: 1.8;
+  color: $color-grey-light;
+}
+
+.mb-2 {
+  margin-bottom: 1.5rem;
+}
+
+.mlm2-5 {
+  margin-left: -2.5rem !important;
+}
+
+.mlm3-5 {
+  margin-left: -3.5rem !important;
+}
+
+ul.list {
+  list-style: none;
 }

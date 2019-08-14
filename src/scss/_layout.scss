@@ -10,10 +10,11 @@
   top: 7.9rem;
   left: 12.5rem;
   width: 96rem;
+  height: 0;
   display: flex;
-  background-color: $color-light;
 
   main {
+    width: 63.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,7 +25,15 @@
   width: 32.2rem;
   height: 37.5rem;
   color: $color-white;
+  font-size: 1.7rem;
+  letter-spacing: .2px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.pay-display {
+  padding: 4rem 3rem;
+  background-color: $color-light;
+  font-size: 1.4rem;
 }

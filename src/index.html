@@ -1,63 +1,118 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Idaproject тестовое задание</title>
 </head>
+
 <body>
   <div class="container">
     <div class="content">
       <aside class="sidebar">
         <nav>
-          <ul class="side-nav">
+          <ul class="side-nav list">
             <li class="side-nav__item">
-                <a
-                  href="#"
-                  class="side-nav__link">
-                    <span>Личный кабинет</span>
-                </a>
+              <a href="#" class="side-nav__link">
+                <span>Личный кабинет</span>
+              </a>
             </li>
-              <li class="side-nav__item side-nav__item--active">
-                  <a
-                    href="#"
-                    class="side-nav__link">
-                      <span>Платежи</span>
-                  </a>
-              </li>
-              <li
-                class="side-nav__item">
-                  <a
-                    href="#"
-                    class="side-nav__link">
-                      <span>История платежей</span>
-                  </a>
-              </li>
-              <li
-                class="side-nav__item">
-                  <a
-                    href="#"
-                    class="side-nav__link">
-                      <span>Настройки</span>
-                  </a>
-              </li>
-              <li class="side-nav__item side-nav__item--disabled">
-                  <a
-                    href="#"
-                    class="side-nav__link">
-                      <span>Выйти</span>
-                  </a>
-              </li>
+            <li class="side-nav__item side-nav__item--active">
+              <a href="#" class="side-nav__link">
+                <span>Платежи</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <span>История платежей</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <span>Настройки</span>
+              </a>
+            </li>
+            <li class="side-nav__item side-nav__item--disabled">
+              <a href="#" class="side-nav__link">
+                <span>Выйти</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </aside>
       <main>
-        
+        <section class="pay-display">
+          <div class="pay-info">
+            <p class="pay-info__head">Информация по оплате:</p>
+            <div class="pay-info__list">
+              <div>
+                <p>Номер счёта:</p>
+                <p>Сумма платежа:</p>
+              </div>
+              <div class="pay-info__value">
+                <p>87123658716587</p>
+                <p>100 руб.</p>
+              </div>
+            </div>
+          </div>
+          <form class="pay-form">
+            <h2 class="pay-form__head">Данные банковской карты</h2>
+            <div class="composition">
+              <div class="card card--front">
+                <div class="pay-form__section">
+                  <label for="card-number-1" class="pay-form__label">Номер карты</label>
+                  <div>
+                    <input type="tel" id="card-number-1" pattern="[0-9]{4,4}" autocomplete="off" required
+                      class="pay-form__input pay-form__input--xs">
+                    <input type="tel" id="card-number-2" pattern="[0-9]{4,4}" autocomplete="off" required
+                      class="pay-form__input pay-form__input--xs">
+                    <input type="tel" id="card-number-3" pattern="[0-9]{4,4}" autocomplete="off" required
+                      class="pay-form__input pay-form__input--xs">
+                    <input type="tel" id="card-number-4" pattern="[0-9]{4,4}" autocomplete="off" required
+                      class="pay-form__input pay-form__input--xs">
+                  </div>
+                </div>
+                <div class="pay-form__section">
+                  <label class="pay-form__label">Срок действия</label>
+                  <select class="pay-form__input pay-form__input--sm pay-form__select">
+                    <option value="04">04</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <img src="img/caret-down.svg" alt="cvc input"
+                    class="pay-form__input-icon pay-form__input-icon--sm mlm3-5">
+                  <select class="pay-form__input pay-form__input--sm2 pay-form__select">
+                    <option value="2018">2018</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <img src="img/caret-down.svg" alt="cvc input"
+                    class="pay-form__input-icon pay-form__input-icon--sm mlm2-5">
+                </div>
+                <div class="pay-form__section">
+                  <input type="text" placeholder="Держатель карты" class="pay-form__input pay-form__input--lg">
+                </div>
+              </div>
+              <div class="card card--back">
+                <div class="card__grey-line"></div>
+                <div class="pay-form__section pay-form__section--flex-right">
+                  <label for="card-cvc" class="pay-form__label">Код CVV2/CVC2</label>
+                  <input type="tel" id="card-cvc" class="pay-form__input pay-form__input--mid" autocomplete="off"
+                    pattern="[0-9]{3,3}" required>
+                  <img src="img/question.svg" alt="cvc input" class="pay-form__input-icon">
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary pay-form__submit" title="Подтвердить данные карты">Оплатить</button>
+          </form>
+        </section>
       </main>
     </div>
   </div>
 
 
 </body>
+
 </html>

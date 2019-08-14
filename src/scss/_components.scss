@@ -1,6 +1,5 @@
 .side-nav {
-  list-style: none;
-  font-size: 1.6rem;
+  font-family: 'OpenSansBold' sans-serif;
 
   &__item {
     height: 7.5rem;
@@ -35,5 +34,154 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+  }
+}
+
+.pay-info {
+  font-size: 1.6rem;
+
+  &__head {
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__value {
+    margin-left: 4rem;
+    color: $color-darker;
+  }
+}
+
+.pay-form {
+  font-size: 1.6rem;
+
+  &__head {
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    color: $color-darkest;
+    font-family: 'OpenSansBold' sans-serif;
+  }
+
+  &__section {
+    padding: 0 1.3rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &--flex-right {
+      align-self: flex-end;
+    }
+  }
+
+  &__label {
+    width: 100%;
+    display: block;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    padding: 1.3rem 1.2rem;
+    background-color: $color-white;
+    border: .1rem solid rgba($color-grey-light, .3);
+
+    &:not(:last-of-type) {
+      margin-right: .5rem;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-light;
+    }
+
+    &--lg {
+      width: 32rem;
+    }
+
+    &--mid {
+      width: 13.8rem;
+    }
+
+    &--xs {
+      width: 6.5rem;
+    }
+
+    &--sm {
+      width: 7rem;
+    }
+
+    &--sm2 {
+      width: 8.5rem;
+    }
+  }
+
+  &__select {
+    appearance: none;
+  }
+
+  &__input-icon {
+    width: 2.5rem;
+    margin-left: -4rem;
+    transform: translateY(.75rem);
+
+    &--sm {
+      position: absolute;
+      width: 1.5rem;
+      margin: 0;
+      transform: translateY(1.5rem);
+    }
+  }
+
+  &__submit {
+    margin: 4rem 0 1rem 1rem;
+    padding: 1.2rem 3.4rem;
+  }
+}
+
+.composition {
+  position: relative;
+}
+
+.card {
+  padding: 1rem 0;
+  border: .1rem solid rgba($color-grey-light, .2);
+  border-radius: 1rem;
+  width: 35rem;
+  height: 23.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-light;
+
+  &--front {
+    position: absolute;
+    z-index: 2;
+  }
+
+  &--back {
+    position: relative;
+    left: 21rem;
+    top: 2rem;
+  }
+
+  &__grey-line {
+    height: 4.3rem;
+    margin: 1rem 0 1.2rem 0;
+    background-color: rgba($color-grey-light, .2);
+  }
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  &--primary {
+    border-radius: 4rem;
+    color: $color-white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background-image: 
+      linear-gradient(to top, $color-blue-dark, $color-blue-light);
   }
 }
