@@ -13,6 +13,7 @@ $color-dark-grey: #373c43;
 $color-blue-dark: #004da4;
 $color-blue-light: #005abf;
 
+// base options
 *,
 *::after,
 *::before {
@@ -24,6 +25,22 @@ $color-blue-light: #005abf;
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 55%;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      font-size: 50%;
+    }
+
+    @media only screen and (max-width: 900px) {
+      font-size: 45%;
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: 35%;
+    }
 }
 
 body {
@@ -33,18 +50,28 @@ body {
   color: $color-grey-light;
 }
 
+ul.list {
+  list-style: none;
+}
+
+
+// utilities
 .mb-2 {
   margin-bottom: 1.5rem;
 }
 
 .mlm2-5 {
   margin-left: -2.5rem !important;
+
+  @media only screen and (max-width: 1000px) {
+    margin-left: -1.5rem !important;
+  }
 }
 
 .mlm3-5 {
   margin-left: -3.5rem !important;
-}
 
-ul.list {
-  list-style: none;
+  @media only screen and (max-width: 1000px) {
+    margin-left: -2.5rem !important;
+  }
 }

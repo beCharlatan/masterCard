@@ -1,10 +1,19 @@
+// sidebar menu component
 .side-nav {
   font-family: 'OpenSansBold' sans-serif;
+
+  @media only screen and (max-width: 900px) {
+    display: flex;
+  }
 
   &__item {
     height: 7.5rem;
     background-color: $color-darker;
     transition: .2s all;
+
+    @media only screen and (max-width: 900px) {
+      flex: 1;
+    }
 
     &:hover {
       background-color: $color-megadark;
@@ -25,6 +34,10 @@
 
     span {
       padding-left: 3rem;
+
+      @media only screen and (max-width: 900px) {
+        padding: 0;
+      }
     }
   }
 
@@ -34,9 +47,15 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 900px) {
+      justify-content: center;
+    }
   }
 }
+// sidebar menu component
 
+// payment's info component
 .pay-info {
   font-size: 1.6rem;
 
@@ -53,9 +72,17 @@
     color: $color-darker;
   }
 }
+// end payment's info component
 
+// card data form component
 .pay-form {
   font-size: 1.6rem;
+
+  @media only screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__head {
     font-size: 2.2rem;
@@ -87,6 +114,10 @@
     background-color: $color-white;
     border: .1rem solid rgba($color-grey-light, .3);
 
+    @media only screen and (max-width: 1000px) {
+      padding: 1rem;
+    }
+
     &:not(:last-of-type) {
       margin-right: .5rem;
     }
@@ -116,6 +147,7 @@
     }
   }
 
+  // hide default caret from native select html tag
   &__select {
     appearance: none;
   }
@@ -125,11 +157,22 @@
     margin-left: -4rem;
     transform: translateY(.75rem);
 
+    @media only screen and (max-width: 1000px) {
+      width: 2rem;
+      margin-left: -3.5rem;
+      transform: translateY(.5rem);
+    }
+
     &--sm {
       position: absolute;
       width: 1.5rem;
       margin: 0;
       transform: translateY(1.5rem);
+
+      @media only screen and (max-width: 1000px) {
+        width: 1rem;
+        transform: translateY(1.5rem);
+      }
     }
   }
 
@@ -138,9 +181,19 @@
     padding: 1.2rem 3.4rem;
   }
 }
+// end card data form component
 
+// credit card model component
 .composition {
   position: relative;
+
+  @media only screen and (max-width: 900px) {
+    transform: translateX(-25%);
+  }
+
+  @media only screen and (max-width: 600px) {
+    transform: translateX(0);
+  }
 }
 
 .card {
@@ -153,24 +206,43 @@
   flex-direction: column;
   background-color: $color-light;
 
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
+
   &--front {
     position: absolute;
     z-index: 2;
+
+    @media only screen and (max-width: 600px) {
+      position: relative;
+    }
   }
 
   &--back {
     position: relative;
     left: 21rem;
     top: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      left: 0;
+      top: 0;
+    }
   }
 
   &__grey-line {
     height: 4.3rem;
     margin: 1rem 0 1.2rem 0;
     background-color: rgba($color-grey-light, .2);
+
+    @media only screen and (max-width: 600px) {
+      margin-top: -4rem;
+    }
   }
 }
+// end credit card model component
 
+// button component
 .btn {
   cursor: pointer;
   outline: none;
@@ -185,3 +257,4 @@
       linear-gradient(to top, $color-blue-dark, $color-blue-light);
   }
 }
+// end button component
