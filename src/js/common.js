@@ -1,5 +1,6 @@
 import $ from 'jquery'
 
+// validation's functions
 const required = val => !!val;
 const regExValidator = regEx => str => {
   for (let i = 0, limit = str.length; i < limit; i++) {
@@ -10,6 +11,7 @@ const regExValidator = regEx => str => {
 const graterThan = len => str => str.length >= len;
 const numLen = len => str => str.length === len;
 
+// form mask
 const formCfg = [
   {
     id: "card-number-1",
@@ -57,12 +59,7 @@ const formCfg = [
   }
 ]
 
-const combineValues = (...values) => {
-  let result = ''
-  values.map(value => result += value)
-  return result
-}
-
+// validate function
 const validate = (id, validators) => () => {
   let val = $(`#${id}`).val();
   console.log(val, 'val')
@@ -83,10 +80,12 @@ $(document).ready(function () {
   for (let i = 0, limit = formCfg.length; i < limit; i++) {
     const { id, validators } = formCfg[i];
 
+    // remove error style with focus
     $(`#${id}`).focus(() => {
       $(`#${id}`).removeClass('pay-form__input--error')
     })
 
+    // check if valid after blur
     $(`#${id}`).blur(() => {
       const result = validate(id, validators).call(null)
       console.log(result, 'RESULT')
@@ -95,13 +94,17 @@ $(document).ready(function () {
       }
     })
 
+    // if input valid, wait 1s and jump to next input
     $(`#${id}`).keyup(() => {
       const result = validate(id, validators).call(null)
       if (result) {
+        // wait for 1s
         const timer = setTimeout(() => {
-          const nextInput = $(`#${formCfg[i+1]['id']}`)
+          const nextInput = $(`#${formCfg[i + 1]['id']}`)
+          // if next input exist jump to it
           return nextInput && nextInput.focus()
         }, 1000)
+        // if user keep on printing, clrear timer
         $(`#${id}`).keyup(() => clearInterval(timer))
       }
     })

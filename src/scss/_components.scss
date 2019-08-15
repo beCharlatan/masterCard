@@ -134,6 +134,10 @@
   // hide default caret from native select html tag
   &__select {
     appearance: none;
+
+    option {
+      visibility: hidden;
+    }
   }
 
   &__options-list {
@@ -149,6 +153,7 @@
     box-shadow: 0 2rem 5rem rgba($color-dark-grey, .06);
     text-align: center;
     z-index: 100;
+    cursor: pointer;
 
     li {
       padding: 0.2rem 0;
@@ -175,7 +180,8 @@
 
       @media only screen and (max-width: 1000px) {
         width: 1rem;
-        transform: translateY(1.5rem);
+        margin-left: -2.5rem;
+        transform: translateY(0);
       }
     }
   }
