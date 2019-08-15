@@ -1,5 +1,6 @@
 
 const path = require('path')
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -63,6 +64,18 @@ module.exports = {
         ]
       },
       {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img'
+            }
+          }
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -94,6 +107,10 @@ module.exports = {
       hash: false,
       template: `${PATHS.src}/index.html`,
       filename: 'index.html'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     })
   ]
 }

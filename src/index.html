@@ -19,27 +19,27 @@
           <ul class="side-nav list">
             <li class="side-nav__item">
               <a href="#" class="side-nav__link">
-                <span>Личный кабинет</span>
+                Личный кабинет
               </a>
             </li>
             <li class="side-nav__item side-nav__item--active">
               <a href="#" class="side-nav__link">
-                <span>Платежи</span>
+                Платежи
               </a>
             </li>
             <li class="side-nav__item">
               <a href="#" class="side-nav__link">
-                <span>История платежей</span>
+                История платежей
               </a>
             </li>
             <li class="side-nav__item">
               <a href="#" class="side-nav__link">
-                <span>Настройки</span>
+                Настройки
               </a>
             </li>
             <li class="side-nav__item side-nav__item--disabled">
               <a href="#" class="side-nav__link">
-                <span>Выйти</span>
+                Выйти
               </a>
             </li>
           </ul>
@@ -73,7 +73,7 @@
               <!-- front side of card model -->
               <div class="card card--front">
                 <div class="pay-form__section">
-                  <label for="card-number-1" class="pay-form__label">Номер карты</label>
+                  <label for="card-number" class="pay-form__label">Номер карты</label>
                   <div>
                     <input type="tel" id="card-number-1" pattern="[0-9]{4,4}" autocomplete="off" required
                       class="pay-form__input pay-form__input--xs">
@@ -87,23 +87,38 @@
                 </div>
                 <div class="pay-form__section">
                   <label class="pay-form__label">Срок действия</label>
-                  <select class="pay-form__input pay-form__input--sm pay-form__select">
-                    <option value="04">04</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  <img src="img/caret-down.svg" alt="cvc input"
-                    class="pay-form__input-icon pay-form__input-icon--sm mlm3-5">
-                  <select class="pay-form__input pay-form__input--sm2 pay-form__select">
-                    <option value="2018">2018</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  <img src="img/caret-down.svg" alt="cvc input"
-                    class="pay-form__input-icon pay-form__input-icon--sm mlm2-5">
+                  <div class="kek">
+                    <select class="pay-form__input pay-form__input--sm pay-form__select">
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <img src="img/caret-down.svg" alt="cvc input"
+                      class="pay-form__input-icon pay-form__input-icon--sm">
+                  </div>
+                  <div class="kek">
+                      <select class="pay-form__input pay-form__input--sm2 pay-form__select">
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                        </select>
+                        <img src="img/caret-down.svg" alt="cvc input"
+                          class="pay-form__input-icon pay-form__input-icon--sm">
+                  </div>
                 </div>
                 <div class="pay-form__section">
-                  <input type="text" placeholder="Держатель карты" class="pay-form__input pay-form__input--lg">
+                  <input id="card-owner" type="text" placeholder="Держатель карты"
+                    class="pay-form__input pay-form__input--lg" required>
                 </div>
               </div>
               <!-- end front side -->
@@ -114,7 +129,7 @@
                 <div class="pay-form__section pay-form__section--flex-right">
                   <label for="card-cvc" class="pay-form__label">Код CVV2/CVC2</label>
                   <input type="tel" id="card-cvc" class="pay-form__input pay-form__input--mid" autocomplete="off"
-                    pattern="[0-9]{3,3}" required>
+                    pattern="[0-9]{3,3}" required value="">
                   <img src="img/question.svg" alt="cvc input" class="pay-form__input-icon">
                 </div>
               </div>

@@ -1,13 +1,11 @@
 // sidebar menu component
 .side-nav {
-  font-family: 'OpenSansBold' sans-serif;
 
   @media only screen and (max-width: 900px) {
     display: flex;
   }
 
   &__item {
-    height: 7.5rem;
     background-color: $color-darker;
     transition: .2s all;
 
@@ -30,19 +28,8 @@
   }
 
   &__link {
-    height: 100%;
-
-    span {
-      padding-left: 3rem;
-
-      @media only screen and (max-width: 900px) {
-        padding: 0;
-      }
-    }
-  }
-
-  &__link:link,
-  &__link:visited {
+    height: 7.5rem;
+    padding-left: 3rem;
     color: inherit;
     text-decoration: none;
     display: flex;
@@ -57,7 +44,6 @@
 
 // payment's info component
 .pay-info {
-  font-size: 1.6rem;
 
   &__head {
     margin-bottom: 1rem;
@@ -76,7 +62,6 @@
 
 // card data form component
 .pay-form {
-  font-size: 1.6rem;
 
   @media only screen and (max-width: 900px) {
     display: flex;
@@ -94,17 +79,12 @@
   &__section {
     padding: 0 1.3rem;
 
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-
     &--flex-right {
       align-self: flex-end;
     }
   }
 
   &__label {
-    width: 100%;
     display: block;
   }
 
@@ -124,6 +104,10 @@
 
     &::-webkit-input-placeholder {
       color: $color-grey-light;
+    }
+
+    &--error {
+      border: 1px solid red;
     }
 
     &--lg {
@@ -152,6 +136,27 @@
     appearance: none;
   }
 
+  &__options-list {
+    display: none;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 10rem;
+    max-height: 15rem;
+    overflow-y: auto;
+    background-color: $color-white;
+    border: .1rem solid rgba($color-grey-light, .2);
+    border-radius: .8rem;
+    box-shadow: 0 2rem 5rem rgba($color-dark-grey, .06);
+    text-align: center;
+    z-index: 100;
+
+    li {
+      padding: 0.2rem 0;
+      border-bottom: 1px solid rgba($color-grey-light, .2);
+      margin: 0 1rem;
+    }
+  }
+
   &__input-icon {
     width: 2.5rem;
     margin-left: -4rem;
@@ -164,10 +169,9 @@
     }
 
     &--sm {
-      position: absolute;
       width: 1.5rem;
-      margin: 0;
-      transform: translateY(1.5rem);
+      margin-left: -3rem;
+      transform: translateY(.5rem);
 
       @media only screen and (max-width: 1000px) {
         width: 1rem;
@@ -197,13 +201,13 @@
 }
 
 .card {
-  padding: 1rem 0;
   border: .1rem solid rgba($color-grey-light, .2);
   border-radius: 1rem;
   width: 35rem;
   height: 23.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   background-color: $color-light;
 
   @media only screen and (max-width: 600px) {
@@ -223,6 +227,7 @@
     position: relative;
     left: 21rem;
     top: 2rem;
+    justify-content: flex-start;
 
     @media only screen and (max-width: 600px) {
       left: 0;
@@ -232,7 +237,7 @@
 
   &__grey-line {
     height: 4.3rem;
-    margin: 1rem 0 1.2rem 0;
+    margin: 2rem 0 1.2rem 0;
     background-color: rgba($color-grey-light, .2);
 
     @media only screen and (max-width: 600px) {

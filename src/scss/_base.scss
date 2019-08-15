@@ -54,7 +54,6 @@ ul.list {
   list-style: none;
 }
 
-
 // utilities
 .mb-2 {
   margin-bottom: 1.5rem;
@@ -74,4 +73,12 @@ ul.list {
   @media only screen and (max-width: 1000px) {
     margin-left: -2.5rem !important;
   }
+}
+
+.kek {
+  display: inline-block;
+}
+
+.visible {
+  display: block;
 }
