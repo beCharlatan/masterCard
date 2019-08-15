@@ -77,6 +77,17 @@ const validate = (id, validators) => () => {
 
 $(document).ready(function () {
 
+  const submit = $('button[type=submit]')
+  submit.prop('disabled', true)
+
+  const formMaySend = form => {
+    if (form.every(i => !!i.valid)) {
+      submit.prop('disabled', false)
+    }
+  }
+
+  console.log($('button[type=submit]'), 'btn')
+
   for (let i = 0, limit = formCfg.length; i < limit; i++) {
     const { id, validators } = formCfg[i];
 
@@ -90,7 +101,11 @@ $(document).ready(function () {
       const result = validate(id, validators).call(null)
       console.log(result, 'RESULT')
       if (!result) {
+        formCfg[i]['valid'] = false
         $(`#${id}`).addClass('pay-form__input--error')
+      } else {
+        formCfg[i]['valid'] = true
+        formMaySend(formCfg)
       }
     })
 
@@ -100,7 +115,8 @@ $(document).ready(function () {
       if (result) {
         // wait for 1s
         const timer = setTimeout(() => {
-          const nextInput = $(`#${formCfg[i + 1]['id']}`)
+          const nextInput = formCfg[i+1] && 
+            $(`#${formCfg[i + 1]['id']}`)
           // if next input exist jump to it
           return nextInput && nextInput.focus()
         }, 1000)
